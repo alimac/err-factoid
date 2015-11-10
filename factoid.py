@@ -30,6 +30,7 @@ class Factoid(BotPlugin):
 
     @re_botcmd(pattern=r'^forget( about)? ((\w+\s??){1,3})$', prefixed=True, flags=re.IGNORECASE)
     def forget_factoid(self, message, match):
+        self.factoid_store = self['FACTOID']
         factoid = match.group(2)
 
         if factoid in self.factoid_store:
