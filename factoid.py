@@ -41,3 +41,9 @@ class Factoid(BotPlugin):
 
         else:
             return "It's not like I knew about %s in the first place." % (format(factoid))
+
+    @botcmd
+    def list_factoids(self, message, args):
+        self.factoid_store = self['FACTOID']
+        yield "I'm Bender! I know about lots of things:"
+        yield ', '.join(sorted(self.factoid_store.keys()))
