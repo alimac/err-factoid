@@ -4,10 +4,9 @@
 Errbot that allows chat users to create "factoids" which the bot can recall
 on demand.
 
-The inspiration for this plugin comes from Druplicon. Druplicon is a bot that
-is present in many Drupal IRC channels.
-
 ## Installation
+
+To install the plugin, tell your bot in a private chat:
 
 ```
 !repos install https://github.com/alimac/err-factoid.git
