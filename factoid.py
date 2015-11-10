@@ -22,8 +22,8 @@ class Factoid(BotPlugin):
         factoid = match.group(1)
         self.factoid_store = self['FACTOID']
 
-        if self.factoid_store[factoid]:
-            return "%s is %s" % (
-                factoid,
-                format(self.factoid_store[factoid])
-            )
+        if factoid in self.factoid_store:
+            return "%s is %s" % (factoid, format(self.factoid_store[factoid]))
+
+        else:
+            return "/me doesn't know about %s" % (factoid)
