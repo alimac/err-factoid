@@ -7,7 +7,7 @@ class Factoid(BotPlugin):
 
     factoid_store = {}
 
-    @re_botcmd(pattern=r'^((\w+\s??){1,3}) is (.+$)', prefixed=False, flags=re.IGNORECASE)
+    @re_botcmd(pattern=r'^((\w+\s??){1,3}) is (.+$)', prefixed=True, flags=re.IGNORECASE)
     def factoid(self, message, match):
         factoid = match.group(1)
         content = match.group(3)
