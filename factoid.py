@@ -45,5 +45,5 @@ class Factoid(BotPlugin):
     @botcmd
     def list_factoids(self, message, args):
         self.factoid_store = self['FACTOID']
-        yield "I'm Bender! I know about lots of things:"
+        yield "I'm {}! I know about lots of things:" .format(self.bot_config.CHATROOM_FN)
         yield ', '.join(sorted(self.factoid_store.keys()))
