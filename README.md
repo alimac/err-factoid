@@ -28,8 +28,15 @@ BOT_ALT_PREFIX_CASEINSENSITIVE = True
 
 ## Interaction
 
-This plugin allows your bot to store and recall "factoids". Factoics are between
-one and three words in length.
+This plugin allows your bot to store and recall "factoids". Factoids are between
+one and three words in length and follow the formula `thing is description`.
+
+Examples:
+```
+water is wet
+hot water is wet
+super hot water is wet and scalding
+```
 
 ### Add a new factoid
 
@@ -57,7 +64,7 @@ To have the bot recall a factoid, simply ask:
 water?
 ```
 
-Your bot shoul reply:
+Your bot should reply:
 
 ```
 water is wet
@@ -65,7 +72,7 @@ water is wet
 
 ### Remove a factoid
 
-To remove one of the factoids, say either:
+To remove one of the factoids, say one of the following:
 
 ```
 !forget water
@@ -76,7 +83,7 @@ Or, if you enabled the alternate prefix:
 
 ```
 Err, forget water
-Err: forget about water
+Err, forget about water
 ```
 
 ### List all factoids
@@ -88,3 +95,8 @@ To list all the factoids, use:
 ```
 
 The bot should respond with a comma-delimited list of factoids it knows about.
+
+```
+I'm Err! I know about lots of things:
+water, hot water, very hot water
+```
