@@ -9,6 +9,8 @@ class Factoid(BotPlugin):
 
     @re_botcmd(pattern=r'^((\w+\s??){1,3}) is (.+$)', prefixed=True, flags=re.IGNORECASE)
     def learn_factoid(self, message, match):
+        """ Save a factoid Example: !learn factoid water is wet """
+
         factoid = match.group(1)
         content = match.group(3)
 
@@ -19,6 +21,8 @@ class Factoid(BotPlugin):
 
     @re_botcmd(pattern=r'^((\w+\s??){1,3})\?$', prefixed=False, flags=re.IGNORECASE)
     def tell_factoid(self, message, match):
+        """ Ask about a factoid (prefix not needed). Example: water?  """
+
         factoid = match.group(1)
         if 'FACTOID' in self:
             self.factoid_store = self['FACTOID']
@@ -31,6 +35,8 @@ class Factoid(BotPlugin):
 
     @re_botcmd(pattern=r'^forget( about)? ((\w+\s??){1,3})$', prefixed=True, flags=re.IGNORECASE)
     def forget_factoid(self, message, match):
+        """ Forget a factoid.  Example: !forget water or !forget about water """
+
         if 'FACTOID' in self:
             self.factoid_store = self['FACTOID']
 
@@ -47,6 +53,8 @@ class Factoid(BotPlugin):
 
     @botcmd
     def list_factoids(self, message, args):
+        """ List all known factoids """
+
         if 'FACTOID' in self:
             self.factoid_store = self['FACTOID']
 
