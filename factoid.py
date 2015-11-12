@@ -20,7 +20,8 @@ class Factoid(BotPlugin):
     @re_botcmd(pattern=r'^((\w+\s??){1,3})\?$', prefixed=False, flags=re.IGNORECASE)
     def tell_factoid(self, message, match):
         factoid = match.group(1)
-        self.factoid_store = self['FACTOID']
+        if 'FACTOID' in self:
+            self.factoid_store = self['FACTOID']
 
         if factoid in self.factoid_store:
             return "%s is %s" % (factoid, format(self.factoid_store[factoid]))
@@ -30,7 +31,9 @@ class Factoid(BotPlugin):
 
     @re_botcmd(pattern=r'^forget( about)? ((\w+\s??){1,3})$', prefixed=True, flags=re.IGNORECASE)
     def forget_factoid(self, message, match):
-        self.factoid_store = self['FACTOID']
+        if 'FACTOID' in self:
+            self.factoid_store = self['FACTOID']
+
         factoid = match.group(2)
 
         if factoid in self.factoid_store:
@@ -44,6 +47,12 @@ class Factoid(BotPlugin):
 
     @botcmd
     def list_factoids(self, message, args):
-        self.factoid_store = self['FACTOID']
-        yield "I'm {}! I know about lots of things:" .format(self.bot_config.CHATROOM_FN)
-        yield ', '.join(sorted(self.factoid_store.keys()))
+        if 'FACTOID' in self:
+            self.factoid_store = self['FACTOID']
+
+        if self.factoid_store:
+            yield "I'm {}! I know about lots of things:" .format(self.bot_config.CHATROOM_FN)
+            yield ', '.join(sorted(self.factoid_store.keys()))
+
+        else:
+            return "I have not learned any factoids yet."
