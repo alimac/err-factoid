@@ -27,7 +27,7 @@ class Factoid(BotPlugin):
             return "%s is %s" % (factoid, format(self.factoid_store[factoid]))
 
         else:
-            return "/me doesn't know about %s" % (factoid)
+            return "/me does not know about %s" % (factoid)
 
     @re_botcmd(pattern=r'^forget( about)? ((\w+\s??){1,3})$', prefixed=True, flags=re.IGNORECASE)
     def forget_factoid(self, message, match):
