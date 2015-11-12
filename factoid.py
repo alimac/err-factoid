@@ -55,4 +55,4 @@ class Factoid(BotPlugin):
             yield ', '.join(sorted(self.factoid_store.keys()))
 
         else:
-            return "I have not learned any factoids yet."
+            yield "I have not learned any factoids yet."
