@@ -43,7 +43,7 @@ class Factoid(BotPlugin):
             return "OK, I forgot about %s" % (format(factoid))
 
         else:
-            return "It's not like I knew about %s in the first place." % (format(factoid))
+            return "I did not know about %s." % (format(factoid))
 
     @botcmd
     def list_factoids(self, message, args):
@@ -51,7 +51,7 @@ class Factoid(BotPlugin):
             self.factoid_store = self['FACTOID']
 
         if self.factoid_store:
-            yield "I'm {}! I know about lots of things:" .format(self.bot_config.CHATROOM_FN)
+            yield "I'm {}! I know about:" .format(self.bot_config.CHATROOM_FN)
             yield ', '.join(sorted(self.factoid_store.keys()))
 
         else:
