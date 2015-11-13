@@ -19,11 +19,11 @@ class Factoid(BotPlugin):
 
         return "Got it, %s is %s" % (format(factoid), format(content))
 
-    @re_botcmd(pattern=r'^((\w+\s??){1,3})\?$', prefixed=False, flags=re.IGNORECASE)
+    @re_botcmd(pattern=r'^(what is )?((\w+\s??){1,3})\?$', prefixed=False, flags=re.IGNORECASE)
     def tell_factoid(self, message, match):
         """ Ask about a factoid (prefix not needed). Example: water?  """
 
-        factoid = match.group(1)
+        factoid = match.group(2)
         if 'FACTOID' in self:
             self.factoid_store = self['FACTOID']
 
