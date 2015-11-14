@@ -4,6 +4,7 @@ import factoid
 from errbot.backends.test import testbot
 from errbot import plugin_manager
 
+
 class TestFactoid(object):
     extra_plugin_dir = '.'
 
@@ -26,7 +27,7 @@ class TestFactoid(object):
         assert 'water is wet' in testbot.pop_message()
 
         testbot.push_message('!water is hot')
-        assert 'I already know about water, but you can tell me to forget it.' in testbot.pop_message()
+        assert 'I already know about water.' in testbot.pop_message()
 
     def test_tell_factoid_unknown(self, testbot):
         testbot.push_message('sky?')
