@@ -14,6 +14,12 @@ class Factoid(BotPlugin):
         factoid = match.group(1)
         content = match.group(3)
 
+        if 'FACTOID' in self:
+            self.factoid_store = self['FACTOID']
+
+        if factoid in self.factoid_store:
+            return "I already know about %s, but you can tell me to forget it." % (factoid)
+
         self.factoid_store[factoid] = content
         self['FACTOID'] = self.factoid_store
 
