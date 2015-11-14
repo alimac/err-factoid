@@ -29,6 +29,9 @@ class TestFactoid(object):
         testbot.push_message('!water is hot')
         assert 'I already know about water.' in testbot.pop_message()
 
+        testbot.push_message('!water is wet?')
+        assert '/me does not know about water is wet' in testbot.pop_message()
+
     def test_tell_factoid_unknown(self, testbot):
         testbot.push_message('sky?')
         assert '/me does not know about sky' in testbot.pop_message()
@@ -45,3 +48,7 @@ class TestFactoid(object):
 
         testbot.push_message('!list factoids')
         assert 'I have not learned any factoids yet.' in testbot.pop_message()
+
+    def test_forget_factoid_unknown(self, testbot):
+        testbot.push_message('!forget sky')
+        assert 'I did not know about sky' in testbot.pop_message()
