@@ -3,9 +3,8 @@
 
 # Factoid plugin for Errbot
 
-[Errbot](http://errbot.net) is a Python-based bot. This is is a plugin for
-Errbot that allows chat users to create "factoids" which the bot can recall
-on demand.
+Factoid is a plugin for [Errbot](http://errbot.io), a Python-based chat bot.
+It allows chat users to create "factoids" which the bot can recall on demand.
 
 ## Installation
 
@@ -100,6 +99,6 @@ To list all the factoids, use:
 The bot should respond with a comma-delimited list of factoids it knows about.
 
 ```
-I'm Err! I know about lots of things:
+I'm Err! I know about:
 water, hot water, very hot water
 ```
