@@ -4,10 +4,10 @@ python:
   - 3.3
   - 3.4
 install:
-  - pip install -q err pytest --use-wheel
+  - pip install -q err pytest pytest-pep8 --use-wheel
   - pip install -q coverage coveralls --use-wheel
 script:
-  - coverage run --source factoid -m py.test
+  - coverage run --source factoid -m py.test --pep8
 after_success:
   - coveralls
 notifications:
