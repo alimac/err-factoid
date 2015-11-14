@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/alimac/err-factoid.svg?branch=master)](https://travis-ci.org/alimac/err-factoid)
+[![Coverage Status](https://coveralls.io/repos/alimac/err-factoid/badge.svg?branch=master&service=github)](https://coveralls.io/github/alimac/err-factoid?branch=master)
 
 # Factoid plugin for Errbot
 
