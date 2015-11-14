@@ -32,9 +32,9 @@ one and three words in length and follow the formula `thing is description`.
 
 Examples:
 ```
-water is wet
-hot water is wet
-super hot water is wet and scalding
+!water is wet
+!hot water is wet
+!super hot water is wet and scalding
 ```
 
 ### Add a new factoid
@@ -55,12 +55,13 @@ Your bot should respond with:
 Got it, water is wet
 ```
 
-### Ask for a factoid
+### Ask about a factoid
 
 To have the bot recall a factoid, simply ask:
 
 ```
 water?
+what is water?
 ```
 
 Your bot should reply:
