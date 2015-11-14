@@ -7,7 +7,7 @@ class Factoid(BotPlugin):
 
     factoid_store = {}
 
-    @re_botcmd(pattern=r'^((\w+\s??){1,3}) is (.+!\?$)', prefixed=True, flags=re.IGNORECASE)
+    @re_botcmd(pattern=r'^((\w+\s??){1,3}) is (.+$)', prefixed=True, flags=re.IGNORECASE)
     def learn_factoid(self, message, match):
         """ Save a factoid. Example: !learn factoid water is wet """
 
