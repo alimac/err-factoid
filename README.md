@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alimac/err-factoid.svg?branch=master)](https://travis-ci.org/alimac/err-factoid)
+
 # Factoid plugin for Errbot
 
 [Errbot](http://errbot.net) is a Python-based bot. This is is a plugin for
