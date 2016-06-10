@@ -1,15 +1,21 @@
 language: python
+
 python:
   - 2.7
   - 3.3
   - 3.4
   - 3.5
+
 install:
   - pip install -q err pytest pytest-pep8 --use-wheel
   - pip install -q coverage coveralls --use-wheel
+
 script:
-  - coverage run --source factoid -m py.test --pep8
+  - pep8 --statistics --show-source factoid.py
+  - coverage run --source factoid -m py.test
+
 after_success:
   - coveralls
+
 notifications:
   email: false
